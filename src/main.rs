@@ -1,15 +1,12 @@
-use hello_macro::HelloMacro;
-use macro_rs::HelloMacro;
 
-struct Pancakes;
+fn main() {
+    let v: Vec<i32> = vec![1, 2, 3];
 
-impl HelloMacro for Pancakes {
-    fn hello_macro() {
-        println!("Hello, Macro! My name is Pancakes!");
-    }
 }
 
 
-fn main() {
-    Pancakes::hello_macro();
+#[macro_export]
+macro_rules! calc {
+    ( $( $x:expr ), *) => {
+    };
 }
